@@ -3,6 +3,7 @@
 
 # Log file
 *.log
+src/main/java/Token.txt
 
 # BlueJ files
 *.ctxt
