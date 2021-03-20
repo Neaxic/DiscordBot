@@ -9,9 +9,8 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        String token = rootProject.file('Token.txt').text.trim();
 
-        JDABuilder jdaBuilder = JDABuilder.createDefault(token);
+        JDABuilder jdaBuilder = JDABuilder.createDefault("ODIyNDgxNTE1NjI2NzU4MTQ0.YFS5mg.ji1Es3hlvW9e6zFSY_w4S9bLosA");
         JDA jda = null;
 
         MessagesClass messagesClass = new MessagesClass();
