@@ -9,6 +9,10 @@ public class MessagesClass extends ListenerAdapter {
         return e.getMessage().getContentRaw();
     }
 
+    public boolean contextequals(MessageReceivedEvent e, String str){
+        return e.getMessage().getContentRaw().equals(str);
+    }
+
     public void sendchannelMsg(MessageReceivedEvent e, String msg){
         e.getChannel().sendMessage(msg).queue();
     }
@@ -16,7 +20,7 @@ public class MessagesClass extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent e) {
 
-        if(e.getMessage().getContentRaw().equals(".info")){
+        if(contextequals(e,".info")){
             EmbedBuilder embedBuilder = new EmbedBuilder();
             embedBuilder.setTitle("BOT STATUS:");
             embedBuilder.addField("COMMANDS: ","YES",false);
@@ -28,7 +32,8 @@ public class MessagesClass extends ListenerAdapter {
             embedBuilder.clear();
         }
 
-        if(contextRaw(e).equals(".KlasseLinks")){
+        // TODO: KLASSE RELATERET TING
+        if(contextequals(e,".KlasseLinks")){
             EmbedBuilder embedBuilder = new EmbedBuilder();
             embedBuilder.setTitle("Overview af links:");
             embedBuilder.addField("SDJ","https://viadk.zoom.us/j/4059985796?pwd=SzVyNkhnMytVa3FzK3VNMGh6amxQdz09",false);
@@ -40,24 +45,31 @@ public class MessagesClass extends ListenerAdapter {
             e.getChannel().sendMessage(embedBuilder.build()).queue();
             embedBuilder.clear();
         }
-        if(contextRaw(e).equals("Andre")){
+        if(contextequals(e,"Andre")){
             sendchannelMsg(e,"Top shotta ^");
         }
-        if(e.getMessage().getContentRaw().equals(".sut")){
-            e.getChannel().sendMessage(e.getMessage().getAuthor().getName() + " Sutter @las af" ).queue();
+        if(contextequals(e,".sut")){
+            sendchannelMsg(e,e.getMessage().getAuthor().getName() + " sutter Andreas af");
+            sendchannelMsg(e, "og "+ e.getMessage().getAuthor().getName() + " nyder det!");
         }
-        if(contextRaw(e).equals(".sucks") || e.getMessage().getContentRaw().equals(".sucks")){
-            sendchannelMsg(e,e.getMessage().getAuthor().getName() + " sucks Andre off");
-            sendchannelMsg(e, "and "+ e.getMessage().getAuthor().getName() + " is enjoying it!");
-        }
-        if(contextRaw(e).equals("Andre is gay")){
+        if(contextequals(e,"Andre is gay")){
             sendchannelMsg(e,"You are wrong!");
             e.getMember().modifyNickname(e.getAuthor().getName() + "is gay");
             e.getMember().kick();
         }
-        if(contextRaw(e).equals(".adminGuden")) {
+        if(contextequals(e,".adminGuden")) {
             if (e.getMessage().getAuthor().getName().equals("Andre")) {
             }
         }
+
+
+
+        // TODO: FUN POINTLESS
+        if(contextequals(e,".sucks") || contextequals(e,".Sucks")){
+            sendchannelMsg(e,e.getMessage().getAuthor().getName() + " sucks Andre off");
+            sendchannelMsg(e, "and "+ e.getMessage().getAuthor().getName() + " is enjoying it!");
+        }
+
+
     }
 }

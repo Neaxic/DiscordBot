@@ -13,7 +13,7 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    compile 'net.dv8tion:JDA:4.2.0_242'
+    compile 'net.dv8tion:JDA:4.2.0_242', 'se.michaelthelin.spotify:spotify-web-api-java:6.5.2'
 }
 
 test {
