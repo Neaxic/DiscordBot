@@ -14,9 +14,9 @@ public class Main {
         JDABuilder jdaBuilder = JDABuilder.createDefault("ODIyNDgxNTE1NjI2NzU4MTQ0.YFS5mg.ji1Es3hlvW9e6zFSY_w4S9bLosA");
         JDA jda = null;
 
-        SpotifyApi spotifyApi = new SpotifyApi.Builder()
-                .setAccessToken("d")
-                .build();
+        //SpotifyApi spotifyApi = new SpotifyApi.Builder()
+        //        .setAccessToken("d")
+        //        .build();
 
         MessagesClass messagesClass = new MessagesClass();
 
