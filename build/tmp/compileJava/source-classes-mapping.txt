@@ -1,4 +1,0 @@
-Main.java
- Main
-MessagesClass.java
- MessagesClass

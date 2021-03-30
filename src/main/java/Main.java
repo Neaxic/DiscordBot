@@ -21,7 +21,7 @@ public class Main {
         MessagesClass messagesClass = new MessagesClass();
 
         jdaBuilder.addEventListeners(messagesClass);
-        jdaBuilder.setActivity(Activity.watching("champen Andreas"));
+        jdaBuilder.setActivity(Activity.watching("what Andreas is doing, bc everything he does is right"));
 
         try{
             jda = jdaBuilder.build();
